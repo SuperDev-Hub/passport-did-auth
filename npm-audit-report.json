@@ -1,0 +1,3132 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@babel/traverse": {
+      "name": "@babel/traverse",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096886,
+          "name": "@babel/traverse",
+          "dependency": "@babel/traverse",
+          "title": "Babel vulnerable to arbitrary code execution when compiling specifically crafted malicious code",
+          "url": "https://github.com/advisories/GHSA-67hx-6x53-jw92",
+          "severity": "critical",
+          "range": "<7.23.2"
+        }
+      ],
+      "effects": [],
+      "range": "<7.23.2",
+      "nodes": [
+        "node_modules/@babel/traverse"
+      ],
+      "fixAvailable": true
+    },
+    "@energyweb/iam-contracts": {
+      "name": "@energyweb/iam-contracts",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@ensdomains/ens-contracts",
+        "@openzeppelin/contracts",
+        "ethers"
+      ],
+      "effects": [],
+      "range": ">=1.14.0",
+      "nodes": [
+        "node_modules/@energyweb/iam-contracts"
+      ],
+      "fixAvailable": true
+    },
+    "@ensdomains/ens": {
+      "name": "@ensdomains/ens",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "solc"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ensdomains/ens"
+      ],
+      "fixAvailable": true
+    },
+    "@ensdomains/ens-contracts": {
+      "name": "@ensdomains/ens-contracts",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094856,
+          "name": "@ensdomains/ens-contracts",
+          "dependency": "@ensdomains/ens-contracts",
+          "title": ".eth registrar controller can shorten the duration of registered names",
+          "url": "https://github.com/advisories/GHSA-rrxv-q8m4-wch3",
+          "severity": "moderate",
+          "range": "<=0.0.21"
+        }
+      ],
+      "effects": [
+        "@energyweb/iam-contracts"
+      ],
+      "range": "<=0.0.21",
+      "nodes": [
+        "node_modules/@ensdomains/ens-contracts"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/abi": {
+      "name": "@ethersproject/abi",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/hash"
+      ],
+      "effects": [
+        "@ethersproject/contracts"
+      ],
+      "range": "5.0.10 - 5.7.0",
+      "nodes": [
+        "node_modules/@energyweb/iam-contracts/node_modules/@ethersproject/abi",
+        "node_modules/@ethersproject/contracts/node_modules/@ethersproject/abi",
+        "node_modules/ethers/node_modules/@ethersproject/abi"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/abstract-provider": {
+      "name": "@ethersproject/abstract-provider",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/transactions"
+      ],
+      "effects": [
+        "@ethersproject/abstract-signer",
+        "@ethersproject/contracts"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/abstract-provider"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/abstract-signer": {
+      "name": "@ethersproject/abstract-signer",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-provider"
+      ],
+      "effects": [
+        "@ethersproject/hash"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/abstract-signer"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/contracts": {
+      "name": "@ethersproject/contracts",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abi",
+        "@ethersproject/abstract-provider",
+        "@ethersproject/transactions"
+      ],
+      "effects": [
+        "ethers"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/contracts"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/hash": {
+      "name": "@ethersproject/hash",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/abstract-signer"
+      ],
+      "effects": [
+        "@ethersproject/abi",
+        "@ethersproject/providers",
+        "@ethersproject/wallet",
+        "@ethersproject/wordlists",
+        "ethers"
+      ],
+      "range": "5.0.6 - 5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/hash"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/hdnode": {
+      "name": "@ethersproject/hdnode",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/signing-key",
+        "@ethersproject/wordlists"
+      ],
+      "effects": [
+        "@ethersproject/json-wallets"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/hdnode"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/json-wallets": {
+      "name": "@ethersproject/json-wallets",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/hdnode"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ethersproject/json-wallets"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/providers": {
+      "name": "@ethersproject/providers",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@ethersproject/hash",
+        "ws"
+      ],
+      "effects": [
+        "ethers"
+      ],
+      "range": "<=5.7.2",
+      "nodes": [
+        "node_modules/@energyweb/iam-contracts/node_modules/@ethersproject/providers",
+        "node_modules/@ethersproject/providers"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/signing-key": {
+      "name": "@ethersproject/signing-key",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "elliptic"
+      ],
+      "effects": [
+        "@ethersproject/hdnode",
+        "@ethersproject/transactions",
+        "@ethersproject/wallet"
+      ],
+      "range": "<=5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/signing-key"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/transactions": {
+      "name": "@ethersproject/transactions",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/signing-key"
+      ],
+      "effects": [
+        "@ethersproject/abstract-provider",
+        "@ethersproject/contracts",
+        "web3-core-method"
+      ],
+      "range": "<=5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/transactions"
+      ],
+      "fixAvailable": false
+    },
+    "@ethersproject/wallet": {
+      "name": "@ethersproject/wallet",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/hash",
+        "@ethersproject/signing-key"
+      ],
+      "effects": [],
+      "range": "<=5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/wallet"
+      ],
+      "fixAvailable": true
+    },
+    "@ethersproject/wordlists": {
+      "name": "@ethersproject/wordlists",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/hash"
+      ],
+      "effects": [
+        "@ethersproject/hdnode",
+        "ethers"
+      ],
+      "range": "5.0.8 - 5.7.0",
+      "nodes": [
+        "node_modules/@ethersproject/wordlists"
+      ],
+      "fixAvailable": false
+    },
+    "@ew-did-registry/claims": {
+      "name": "@ew-did-registry/claims",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@ew-did-registry/did-ipfs-store",
+        "@ew-did-registry/jwt",
+        "@ew-did-registry/keys"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ew-did-registry/claims",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/claims"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/claims",
+        "version": "0.9.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@ew-did-registry/did-document": {
+      "name": "@ew-did-registry/did-document",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ethers"
+      ],
+      "effects": [],
+      "range": ">=0.5.2-alpha.2.0",
+      "nodes": [
+        "node_modules/@ew-did-registry/did-document",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/did-document"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-document",
+        "version": "0.5.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@ew-did-registry/did-ethr-resolver": {
+      "name": "@ew-did-registry/did-ethr-resolver",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ethers"
+      ],
+      "effects": [],
+      "range": ">=0.5.2-alpha.2.0",
+      "nodes": [
+        "node_modules/@ew-did-registry/did-ethr-resolver",
+        "node_modules/@ew-did-registry/proxyidentity/node_modules/@ew-did-registry/did-ethr-resolver",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/did-ethr-resolver"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-ethr-resolver",
+        "version": "0.5.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@ew-did-registry/did-ipfs-store": {
+      "name": "@ew-did-registry/did-ipfs-store",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ipfs-http-client"
+      ],
+      "effects": [
+        "@ew-did-registry/claims"
+      ],
+      "range": "<=0.7.1-alpha.816.0",
+      "nodes": [
+        "node_modules/@ew-did-registry/did-ipfs-store",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/did-ipfs-store"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-ipfs-store",
+        "version": "0.9.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@ew-did-registry/did-resolver-interface": {
+      "name": "@ew-did-registry/did-resolver-interface",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ethers"
+      ],
+      "effects": [],
+      "range": ">=0.5.2-alpha.2.0",
+      "nodes": [
+        "node_modules/@ew-did-registry/did-resolver-interface",
+        "node_modules/@ew-did-registry/proxyidentity/node_modules/@ew-did-registry/did-resolver-interface",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/did-resolver-interface"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-resolver-interface",
+        "version": "0.5.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@ew-did-registry/jwt": {
+      "name": "@ew-did-registry/jwt",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ethers",
+        "jsonwebtoken"
+      ],
+      "effects": [
+        "@ew-did-registry/claims",
+        "iam-client-lib"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@ew-did-registry/jwt",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/jwt"
+      ],
+      "fixAvailable": false
+    },
+    "@ew-did-registry/keys": {
+      "name": "@ew-did-registry/keys",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ethers"
+      ],
+      "effects": [
+        "@ew-did-registry/claims"
+      ],
+      "range": ">=0.5.2-alpha.40.0",
+      "nodes": [
+        "node_modules/@ew-did-registry/keys",
+        "node_modules/@ew-did-registry/proxyidentity/node_modules/@ew-did-registry/keys",
+        "node_modules/iam-client-lib/node_modules/@ew-did-registry/keys"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/keys",
+        "version": "0.5.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@ew-did-registry/proxyidentity": {
+      "name": "@ew-did-registry/proxyidentity",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ethers"
+      ],
+      "effects": [],
+      "range": ">=0.5.2-alpha.2.0",
+      "nodes": [
+        "node_modules/@ew-did-registry/proxyidentity"
+      ],
+      "fixAvailable": true
+    },
+    "@gnosis.pm/safe-apps-sdk": {
+      "name": "@gnosis.pm/safe-apps-sdk",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core"
+      ],
+      "effects": [
+        "iam-client-lib"
+      ],
+      "range": "1.0.0-beta.0 - 2.1.0",
+      "nodes": [
+        "node_modules/@gnosis.pm/safe-apps-sdk"
+      ],
+      "fixAvailable": false
+    },
+    "@nomiclabs/truffle-contract": {
+      "name": "@nomiclabs/truffle-contract",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@truffle/debug-utils",
+        "@truffle/interface-adapter",
+        "ethers"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nomiclabs/truffle-contract"
+      ],
+      "fixAvailable": true
+    },
+    "@npmcli/arborist": {
+      "name": "@npmcli/arborist",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@npmcli/metavuln-calculator",
+        "@npmcli/run-script"
+      ],
+      "effects": [
+        "libnpmfund"
+      ],
+      "range": "<=2.10.0",
+      "nodes": [
+        "node_modules/npm/node_modules/@npmcli/arborist"
+      ],
+      "fixAvailable": true
+    },
+    "@npmcli/metavuln-calculator": {
+      "name": "@npmcli/metavuln-calculator",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "pacote"
+      ],
+      "effects": [
+        "@npmcli/arborist"
+      ],
+      "range": "<=1.1.1",
+      "nodes": [
+        "node_modules/npm/node_modules/@npmcli/metavuln-calculator"
+      ],
+      "fixAvailable": true
+    },
+    "@npmcli/run-script": {
+      "name": "@npmcli/run-script",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "node-gyp"
+      ],
+      "effects": [
+        "@npmcli/arborist",
+        "libnpmexec",
+        "libnpmpack",
+        "libnpmversion",
+        "npm",
+        "pacote"
+      ],
+      "range": "1.1.1 - 1.8.6",
+      "nodes": [
+        "node_modules/npm/node_modules/@npmcli/run-script"
+      ],
+      "fixAvailable": true
+    },
+    "@octokit/core": {
+      "name": "@octokit/core",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@octokit/request",
+        "@octokit/request-error"
+      ],
+      "effects": [
+        "@octokit/rest"
+      ],
+      "range": "<=5.2.0",
+      "nodes": [
+        "node_modules/@octokit/core"
+      ],
+      "fixAvailable": true
+    },
+    "@octokit/graphql": {
+      "name": "@octokit/graphql",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@octokit/request"
+      ],
+      "effects": [],
+      "range": "<=2.1.3 || 3.0.0 - 7.1.0",
+      "nodes": [
+        "node_modules/@octokit/graphql"
+      ],
+      "fixAvailable": true
+    },
+    "@octokit/plugin-paginate-rest": {
+      "name": "@octokit/plugin-paginate-rest",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102261,
+          "name": "@octokit/plugin-paginate-rest",
+          "dependency": "@octokit/plugin-paginate-rest",
+          "title": "@octokit/plugin-paginate-rest has a Regular Expression in iterator Leads to ReDoS Vulnerability Due to Catastrophic Backtracking",
+          "url": "https://github.com/advisories/GHSA-h5c3-5r3r-rr8q",
+          "severity": "moderate",
+          "range": ">=1.0.0 <11.4.1"
+        }
+      ],
+      "effects": [
+        "@octokit/rest"
+      ],
+      "range": "<=11.4.0",
+      "nodes": [
+        "node_modules/@octokit/plugin-paginate-rest"
+      ],
+      "fixAvailable": true
+    },
+    "@octokit/request": {
+      "name": "@octokit/request",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@octokit/request-error",
+        {
+          "source": 1102260,
+          "name": "@octokit/request",
+          "dependency": "@octokit/request",
+          "title": "@octokit/request has a Regular Expression in fetchWrapper that Leads to ReDoS Vulnerability Due to Catastrophic Backtracking",
+          "url": "https://github.com/advisories/GHSA-rmvr-2pp2-xj38",
+          "severity": "moderate",
+          "range": ">=1.0.0 <9.2.1"
+        }
+      ],
+      "effects": [
+        "@octokit/core",
+        "@octokit/graphql"
+      ],
+      "range": "<=9.2.0",
+      "nodes": [
+        "node_modules/@octokit/request"
+      ],
+      "fixAvailable": true
+    },
+    "@octokit/request-error": {
+      "name": "@octokit/request-error",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102256,
+          "name": "@octokit/request-error",
+          "dependency": "@octokit/request-error",
+          "title": "@octokit/request-error has a Regular Expression in index that Leads to ReDoS Vulnerability Due to Catastrophic Backtracking",
+          "url": "https://github.com/advisories/GHSA-xx4v-prfh-6cgc",
+          "severity": "moderate",
+          "range": ">=1.0.0 <5.1.1"
+        }
+      ],
+      "effects": [
+        "@octokit/core",
+        "@octokit/request"
+      ],
+      "range": "<=5.1.0",
+      "nodes": [
+        "node_modules/@octokit/request-error"
+      ],
+      "fixAvailable": true
+    },
+    "@octokit/rest": {
+      "name": "@octokit/rest",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@octokit/core",
+        "@octokit/plugin-paginate-rest"
+      ],
+      "effects": [
+        "@semantic-release/github"
+      ],
+      "range": "16.39.0 - 21.0.0-beta.4",
+      "nodes": [
+        "node_modules/@octokit/rest"
+      ],
+      "fixAvailable": true
+    },
+    "@openzeppelin/contracts": {
+      "name": "@openzeppelin/contracts",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1085843,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "ERC1155Supply vulnerability in OpenZeppelin Contracts",
+          "url": "https://github.com/advisories/GHSA-wmpv-c2jp-j2xg",
+          "severity": "low",
+          "range": ">=4.2.0 <4.3.3"
+        },
+        {
+          "source": 1088215,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior",
+          "url": "https://github.com/advisories/GHSA-m6w8-fq7v-ph4m",
+          "severity": "moderate",
+          "range": ">=4.3.0 <4.4.2"
+        },
+        {
+          "source": 1088893,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts's SignatureChecker may revert on invalid EIP-1271 signers",
+          "url": "https://github.com/advisories/GHSA-4g63-c64m-25w9",
+          "severity": "high",
+          "range": ">=4.1.0 <4.7.1"
+        },
+        {
+          "source": 1089132,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts initializer reentrancy may lead to double initialization",
+          "url": "https://github.com/advisories/GHSA-9c22-pwxw-p6hx",
+          "severity": "moderate",
+          "range": ">=3.2.0 <4.4.1"
+        },
+        {
+          "source": 1089256,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts's GovernorVotesQuorumFraction updates to quorum may affect past defeated proposals",
+          "url": "https://github.com/advisories/GHSA-xrc4-737v-9q75",
+          "severity": "high",
+          "range": ">=4.3.0 <4.7.2"
+        },
+        {
+          "source": 1089265,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts's ERC165Checker may revert instead of returning false",
+          "url": "https://github.com/advisories/GHSA-qh9x-gcfh-pcrw",
+          "severity": "high",
+          "range": ">=4.0.0 <4.7.1"
+        },
+        {
+          "source": 1090187,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts vulnerable to ECDSA signature malleability",
+          "url": "https://github.com/advisories/GHSA-4h98-2769-gh6h",
+          "severity": "high",
+          "range": ">=4.1.0 <4.7.3"
+        },
+        {
+          "source": 1090433,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "Improper Initialization in OpenZeppelin",
+          "url": "https://github.com/advisories/GHSA-88g8-f5mf-f5rj",
+          "severity": "high",
+          "range": "<4.4.1"
+        },
+        {
+          "source": 1091839,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "GovernorCompatibilityBravo may trim proposal calldata",
+          "url": "https://github.com/advisories/GHSA-93hq-5wgc-jc82",
+          "severity": "high",
+          "range": ">=4.3.0 <4.8.3"
+        },
+        {
+          "source": 1092641,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts ERC165Checker unbounded gas consumption",
+          "url": "https://github.com/advisories/GHSA-7grf-83vw-6f5x",
+          "severity": "moderate",
+          "range": ">=2.0.0 <4.7.2"
+        },
+        {
+          "source": 1094526,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts vulnerable to Improper Escaping of Output",
+          "url": "https://github.com/advisories/GHSA-g4vp-m682-qqmp",
+          "severity": "moderate",
+          "range": ">=4.0.0 <4.9.3"
+        },
+        {
+          "source": 1094945,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated",
+          "url": "https://github.com/advisories/GHSA-mx2q-35m2-x2rh",
+          "severity": "moderate",
+          "range": ">=3.2.0 <4.8.3"
+        },
+        {
+          "source": 1094980,
+          "name": "@openzeppelin/contracts",
+          "dependency": "@openzeppelin/contracts",
+          "title": "OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning",
+          "url": "https://github.com/advisories/GHSA-5h3x-9wvq-w4m2",
+          "severity": "moderate",
+          "range": ">=4.3.0 <4.9.1"
+        }
+      ],
+      "effects": [
+        "@energyweb/iam-contracts"
+      ],
+      "range": "<=4.9.2",
+      "nodes": [
+        "node_modules/@openzeppelin/contracts"
+      ],
+      "fixAvailable": true
+    },
+    "@semantic-release/github": {
+      "name": "@semantic-release/github",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@octokit/rest"
+      ],
+      "effects": [],
+      "range": "7.0.2 - 8.0.7",
+      "nodes": [
+        "node_modules/@semantic-release/github"
+      ],
+      "fixAvailable": true
+    },
+    "@truffle/codec": {
+      "name": "@truffle/codec",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-utils"
+      ],
+      "effects": [
+        "@truffle/debug-utils"
+      ],
+      "range": "<=0.10.6",
+      "nodes": [
+        "node_modules/@truffle/codec"
+      ],
+      "fixAvailable": true
+    },
+    "@truffle/debug-utils": {
+      "name": "@truffle/debug-utils",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@truffle/codec",
+        "highlight.js"
+      ],
+      "effects": [
+        "@nomiclabs/truffle-contract"
+      ],
+      "range": "1.0.20-alphaTez.0 - 5.0.9",
+      "nodes": [
+        "node_modules/@truffle/debug-utils"
+      ],
+      "fixAvailable": true
+    },
+    "@truffle/interface-adapter": {
+      "name": "@truffle/interface-adapter",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "ethers",
+        "web3"
+      ],
+      "effects": [
+        "@nomiclabs/truffle-contract"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@truffle/interface-adapter"
+      ],
+      "fixAvailable": true
+    },
+    "@walletconnect/client": {
+      "name": "@walletconnect/client",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@walletconnect/core"
+      ],
+      "effects": [],
+      "range": "<=1.8.0",
+      "nodes": [
+        "node_modules/@walletconnect/client"
+      ],
+      "fixAvailable": true
+    },
+    "@walletconnect/core": {
+      "name": "@walletconnect/core",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@walletconnect/socket-transport"
+      ],
+      "effects": [
+        "@walletconnect/client"
+      ],
+      "range": "<=1.8.0",
+      "nodes": [
+        "node_modules/@walletconnect/core"
+      ],
+      "fixAvailable": true
+    },
+    "@walletconnect/socket-transport": {
+      "name": "@walletconnect/socket-transport",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ws"
+      ],
+      "effects": [
+        "@walletconnect/core"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@walletconnect/socket-transport"
+      ],
+      "fixAvailable": true
+    },
+    "@walletconnect/web3-provider": {
+      "name": "@walletconnect/web3-provider",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "web3-provider-engine"
+      ],
+      "effects": [
+        "iam-client-lib"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@walletconnect/web3-provider"
+      ],
+      "fixAvailable": false
+    },
+    "ansi-regex": {
+      "name": "ansi-regex",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094090,
+          "name": "ansi-regex",
+          "dependency": "ansi-regex",
+          "title": "Inefficient Regular Expression Complexity in chalk/ansi-regex",
+          "url": "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+          "severity": "high",
+          "range": ">=3.0.0 <3.0.1"
+        },
+        {
+          "source": 1094091,
+          "name": "ansi-regex",
+          "dependency": "ansi-regex",
+          "title": "Inefficient Regular Expression Complexity in chalk/ansi-regex",
+          "url": "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+          "severity": "high",
+          "range": ">=4.0.0 <4.1.1"
+        },
+        {
+          "source": 1094092,
+          "name": "ansi-regex",
+          "dependency": "ansi-regex",
+          "title": "Inefficient Regular Expression Complexity in chalk/ansi-regex",
+          "url": "https://github.com/advisories/GHSA-93q8-gq69-wqmw",
+          "severity": "high",
+          "range": ">=5.0.0 <5.0.1"
+        }
+      ],
+      "effects": [],
+      "range": "3.0.0 || 4.0.0 - 4.1.0 || 5.0.0",
+      "nodes": [
+        "node_modules/ansi-regex",
+        "node_modules/ganache-cli/node_modules/ansi-regex",
+        "node_modules/npm/node_modules/cli-table3/node_modules/ansi-regex",
+        "node_modules/npm/node_modules/string-width/node_modules/ansi-regex",
+        "node_modules/qrcode/node_modules/ansi-regex"
+      ],
+      "fixAvailable": true
+    },
+    "async": {
+      "name": "async",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097691,
+          "name": "async",
+          "dependency": "async",
+          "title": "Prototype Pollution in async",
+          "url": "https://github.com/advisories/GHSA-fwr7-v2mv-hh25",
+          "severity": "high",
+          "range": ">=2.0.0 <2.6.4"
+        }
+      ],
+      "effects": [],
+      "range": "2.0.0 - 2.6.3",
+      "nodes": [
+        "node_modules/async"
+      ],
+      "fixAvailable": true
+    },
+    "axios": {
+      "name": "axios",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1097679,
+          "name": "axios",
+          "dependency": "axios",
+          "title": "Axios Cross-Site Request Forgery Vulnerability",
+          "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+          "severity": "moderate",
+          "range": ">=0.8.1 <0.28.0"
+        }
+      ],
+      "effects": [
+        "iam-client-lib"
+      ],
+      "range": "0.8.1 - 0.27.2",
+      "nodes": [
+        "node_modules/axios"
+      ],
+      "fixAvailable": false
+    },
+    "body-parser": {
+      "name": "body-parser",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099520,
+          "name": "body-parser",
+          "dependency": "body-parser",
+          "title": "body-parser vulnerable to denial of service when url encoding is enabled",
+          "url": "https://github.com/advisories/GHSA-qwcr-r2fm-qrc7",
+          "severity": "high",
+          "range": "<1.20.3"
+        },
+        "qs"
+      ],
+      "effects": [
+        "express"
+      ],
+      "range": "<=1.20.2",
+      "nodes": [
+        "node_modules/body-parser"
+      ],
+      "fixAvailable": true
+    },
+    "braces": {
+      "name": "braces",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098094,
+          "name": "braces",
+          "dependency": "braces",
+          "title": "Uncontrolled resource consumption in braces",
+          "url": "https://github.com/advisories/GHSA-grv7-fg5c-xmjg",
+          "severity": "high",
+          "range": "<3.0.3"
+        }
+      ],
+      "effects": [],
+      "range": "<3.0.3",
+      "nodes": [
+        "node_modules/braces"
+      ],
+      "fixAvailable": true
+    },
+    "browserify-sign": {
+      "name": "browserify-sign",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102445,
+          "name": "browserify-sign",
+          "dependency": "browserify-sign",
+          "title": "browserify-sign upper bound check issue in `dsaVerify` leads to a signature forgery attack",
+          "url": "https://github.com/advisories/GHSA-x9w5-v3q2-3rhw",
+          "severity": "high",
+          "range": ">=2.6.0 <=4.2.1"
+        }
+      ],
+      "effects": [],
+      "range": "2.6.0 - 4.2.1",
+      "nodes": [
+        "node_modules/browserify-sign"
+      ],
+      "fixAvailable": true
+    },
+    "cookie": {
+      "name": "cookie",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099846,
+          "name": "cookie",
+          "dependency": "cookie",
+          "title": "cookie accepts cookie name, path, and domain with out of bounds characters",
+          "url": "https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+          "severity": "low",
+          "range": "<0.7.0"
+        }
+      ],
+      "effects": [
+        "express"
+      ],
+      "range": "<0.7.0",
+      "nodes": [
+        "node_modules/cookie"
+      ],
+      "fixAvailable": true
+    },
+    "cookiejar": {
+      "name": "cookiejar",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102457,
+          "name": "cookiejar",
+          "dependency": "cookiejar",
+          "title": "cookiejar Regular Expression Denial of Service via Cookie.parse function",
+          "url": "https://github.com/advisories/GHSA-h452-7996-h45h",
+          "severity": "moderate",
+          "range": "<2.1.4"
+        }
+      ],
+      "effects": [],
+      "range": "<2.1.4",
+      "nodes": [
+        "node_modules/cookiejar"
+      ],
+      "fixAvailable": true
+    },
+    "core-js-compat": {
+      "name": "core-js-compat",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "semver"
+      ],
+      "effects": [],
+      "range": "3.6.0 - 3.25.0",
+      "nodes": [
+        "node_modules/core-js-compat"
+      ],
+      "fixAvailable": true
+    },
+    "cross-fetch": {
+      "name": "cross-fetch",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088709,
+          "name": "cross-fetch",
+          "dependency": "cross-fetch",
+          "title": "Incorrect Authorization in cross-fetch",
+          "url": "https://github.com/advisories/GHSA-7gc6-qh9x-w6h8",
+          "severity": "moderate",
+          "range": "<2.2.6"
+        },
+        "node-fetch"
+      ],
+      "effects": [],
+      "range": "<=2.2.5 || 3.0.0 - 3.1.4 || 3.2.0-alpha.0 - 3.2.0-alpha.2",
+      "nodes": [
+        "node_modules/cross-fetch"
+      ],
+      "fixAvailable": true
+    },
+    "cross-spawn": {
+      "name": "cross-spawn",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1100562,
+          "name": "cross-spawn",
+          "dependency": "cross-spawn",
+          "title": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+          "url": "https://github.com/advisories/GHSA-3xgq-45jj-v275",
+          "severity": "high",
+          "range": "<6.0.6"
+        },
+        {
+          "source": 1100563,
+          "name": "cross-spawn",
+          "dependency": "cross-spawn",
+          "title": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+          "url": "https://github.com/advisories/GHSA-3xgq-45jj-v275",
+          "severity": "high",
+          "range": ">=7.0.0 <7.0.5"
+        }
+      ],
+      "effects": [],
+      "range": "<6.0.6 || >=7.0.0 <7.0.5",
+      "nodes": [
+        "node_modules/cross-spawn",
+        "node_modules/ganache-cli/node_modules/cross-spawn"
+      ],
+      "fixAvailable": true
+    },
+    "decode-uri-component": {
+      "name": "decode-uri-component",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094087,
+          "name": "decode-uri-component",
+          "dependency": "decode-uri-component",
+          "title": "decode-uri-component vulnerable to Denial of Service (DoS)",
+          "url": "https://github.com/advisories/GHSA-w573-4hg7-7wgq",
+          "severity": "high",
+          "range": "<0.2.1"
+        }
+      ],
+      "effects": [],
+      "range": "<0.2.1",
+      "nodes": [
+        "node_modules/decode-uri-component"
+      ],
+      "fixAvailable": true
+    },
+    "elliptic": {
+      "name": "elliptic",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1093391,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic Uses a Broken or Risky Cryptographic Algorithm",
+          "url": "https://github.com/advisories/GHSA-r9p9-mrjm-926w",
+          "severity": "moderate",
+          "range": "<6.5.4"
+        },
+        {
+          "source": 1098593,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's EDDSA missing signature length check",
+          "url": "https://github.com/advisories/GHSA-f7q4-pwc6-w24p",
+          "severity": "low",
+          "range": ">=4.0.0 <=6.5.6"
+        },
+        {
+          "source": 1098594,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's ECDSA missing check for whether leading bit of r and s is zero",
+          "url": "https://github.com/advisories/GHSA-977x-g7h5-7qgw",
+          "severity": "low",
+          "range": ">=2.0.0 <=6.5.6"
+        },
+        {
+          "source": 1098595,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic allows BER-encoded signatures",
+          "url": "https://github.com/advisories/GHSA-49q7-c7j4-3p7m",
+          "severity": "low",
+          "range": ">=5.2.1 <=6.5.6"
+        },
+        {
+          "source": 1101387,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Valid ECDSA signatures erroneously rejected in Elliptic",
+          "url": "https://github.com/advisories/GHSA-fc9h-whq2-v747",
+          "severity": "low",
+          "range": "<6.6.0"
+        },
+        {
+          "source": 1101424,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's verify function omits uniqueness validation",
+          "url": "https://github.com/advisories/GHSA-434g-2637-qmqr",
+          "severity": "low",
+          "range": "<6.5.6"
+        },
+        {
+          "source": 1102309,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic's private key extraction in ECDSA upon signing a malformed input (e.g. a string)",
+          "url": "https://github.com/advisories/GHSA-vjh7-7g9h-fjfh",
+          "severity": "critical",
+          "range": "<=6.6.0"
+        }
+      ],
+      "effects": [
+        "@ethersproject/signing-key",
+        "ethers"
+      ],
+      "range": "<=6.6.0",
+      "nodes": [
+        "node_modules/elliptic",
+        "node_modules/ganache-cli/node_modules/elliptic"
+      ],
+      "fixAvailable": false
+    },
+    "es5-ext": {
+      "name": "es5-ext",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096592,
+          "name": "es5-ext",
+          "dependency": "es5-ext",
+          "title": "es5-ext vulnerable to Regular Expression Denial of Service in `function#copy` and `function#toStringTokens`",
+          "url": "https://github.com/advisories/GHSA-4gmj-3p3h-gm8h",
+          "severity": "low",
+          "range": ">=0.10.0 <0.10.63"
+        }
+      ],
+      "effects": [],
+      "range": "0.10.1 - 0.10.62",
+      "nodes": [
+        "node_modules/es5-ext"
+      ],
+      "fixAvailable": true
+    },
+    "eth-json-rpc-infura": {
+      "name": "eth-json-rpc-infura",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "eth-json-rpc-middleware"
+      ],
+      "effects": [
+        "web3-provider-engine"
+      ],
+      "range": "<=5.0.0",
+      "nodes": [
+        "node_modules/eth-json-rpc-infura"
+      ],
+      "fixAvailable": false
+    },
+    "eth-json-rpc-middleware": {
+      "name": "eth-json-rpc-middleware",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ethereumjs-vm",
+        "fetch-ponyfill"
+      ],
+      "effects": [
+        "eth-json-rpc-infura",
+        "web3-provider-engine"
+      ],
+      "range": "1.1.0 - 5.1.0",
+      "nodes": [
+        "node_modules/eth-json-rpc-middleware"
+      ],
+      "fixAvailable": false
+    },
+    "eth-lib": {
+      "name": "eth-lib",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "servify",
+        "ws"
+      ],
+      "effects": [
+        "swarm-js"
+      ],
+      "range": "<=0.1.29",
+      "nodes": [
+        "node_modules/swarm-js/node_modules/eth-lib"
+      ],
+      "fixAvailable": true
+    },
+    "ethereumjs-block": {
+      "name": "ethereumjs-block",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "merkle-patricia-tree"
+      ],
+      "effects": [
+        "ethereumjs-vm"
+      ],
+      "range": ">=0.0.3",
+      "nodes": [
+        "node_modules/ethereumjs-block",
+        "node_modules/ethereumjs-vm/node_modules/ethereumjs-block"
+      ],
+      "fixAvailable": false
+    },
+    "ethereumjs-vm": {
+      "name": "ethereumjs-vm",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ethereumjs-block",
+        "merkle-patricia-tree"
+      ],
+      "effects": [
+        "eth-json-rpc-middleware",
+        "web3-provider-engine"
+      ],
+      "range": ">=0.1.1",
+      "nodes": [
+        "node_modules/ethereumjs-vm"
+      ],
+      "fixAvailable": false
+    },
+    "ethers": {
+      "name": "ethers",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@ethersproject/contracts",
+        "@ethersproject/hash",
+        "@ethersproject/providers",
+        "@ethersproject/wordlists",
+        "elliptic"
+      ],
+      "effects": [
+        "@energyweb/iam-contracts",
+        "@ew-did-registry/did-document",
+        "@ew-did-registry/did-ethr-resolver",
+        "@ew-did-registry/did-resolver-interface",
+        "@ew-did-registry/jwt",
+        "@ew-did-registry/keys",
+        "@ew-did-registry/proxyidentity",
+        "@nomiclabs/truffle-contract",
+        "@truffle/interface-adapter",
+        "iam-client-lib"
+      ],
+      "range": "3.0.0 - 5.7.2",
+      "nodes": [
+        "node_modules/@energyweb/iam-contracts/node_modules/ethers",
+        "node_modules/@nomiclabs/truffle-contract/node_modules/ethers",
+        "node_modules/@truffle/interface-adapter/node_modules/ethers",
+        "node_modules/ethers"
+      ],
+      "fixAvailable": false
+    },
+    "express": {
+      "name": "express",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1096820,
+          "name": "express",
+          "dependency": "express",
+          "title": "Express.js Open Redirect in malformed URLs",
+          "url": "https://github.com/advisories/GHSA-rv95-896h-c2vc",
+          "severity": "moderate",
+          "range": "<4.19.2"
+        },
+        {
+          "source": 1100530,
+          "name": "express",
+          "dependency": "express",
+          "title": "express vulnerable to XSS via response.redirect()",
+          "url": "https://github.com/advisories/GHSA-qw6h-vgh9-j6wx",
+          "severity": "low",
+          "range": "<4.20.0"
+        },
+        "body-parser",
+        "cookie",
+        "path-to-regexp",
+        "qs",
+        "send",
+        "serve-static"
+      ],
+      "effects": [],
+      "range": "<=4.21.1 || 5.0.0-alpha.1 - 5.0.0",
+      "nodes": [
+        "node_modules/express"
+      ],
+      "fixAvailable": true
+    },
+    "fetch-ponyfill": {
+      "name": "fetch-ponyfill",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "node-fetch"
+      ],
+      "effects": [
+        "eth-json-rpc-middleware"
+      ],
+      "range": "1.0.0 - 6.0.2",
+      "nodes": [
+        "node_modules/fetch-ponyfill"
+      ],
+      "fixAvailable": false
+    },
+    "follow-redirects": {
+      "name": "follow-redirects",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1092623,
+          "name": "follow-redirects",
+          "dependency": "follow-redirects",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor in follow-redirects",
+          "url": "https://github.com/advisories/GHSA-pw2r-vq6v-hr8c",
+          "severity": "moderate",
+          "range": "<1.14.8"
+        },
+        {
+          "source": 1096353,
+          "name": "follow-redirects",
+          "dependency": "follow-redirects",
+          "title": "Follow Redirects improperly handles URLs in the url.parse() function",
+          "url": "https://github.com/advisories/GHSA-jchw-25xp-jwwc",
+          "severity": "moderate",
+          "range": "<1.15.4"
+        },
+        {
+          "source": 1096856,
+          "name": "follow-redirects",
+          "dependency": "follow-redirects",
+          "title": "follow-redirects' Proxy-Authorization header kept across hosts",
+          "url": "https://github.com/advisories/GHSA-cxjh-pqwp-8mfp",
+          "severity": "moderate",
+          "range": "<=1.15.5"
+        },
+        {
+          "source": 1102323,
+          "name": "follow-redirects",
+          "dependency": "follow-redirects",
+          "title": "Exposure of sensitive information in follow-redirects",
+          "url": "https://github.com/advisories/GHSA-74fj-2j2h-c42q",
+          "severity": "high",
+          "range": "<1.14.7"
+        }
+      ],
+      "effects": [],
+      "range": "<=1.15.5",
+      "nodes": [
+        "node_modules/follow-redirects"
+      ],
+      "fixAvailable": true
+    },
+    "get-func-name": {
+      "name": "get-func-name",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094574,
+          "name": "get-func-name",
+          "dependency": "get-func-name",
+          "title": "Chaijs/get-func-name vulnerable to ReDoS",
+          "url": "https://github.com/advisories/GHSA-4q6p-r6v2-jvc5",
+          "severity": "high",
+          "range": "<2.0.1"
+        }
+      ],
+      "effects": [],
+      "range": "<2.0.1",
+      "nodes": [
+        "node_modules/get-func-name"
+      ],
+      "fixAvailable": true
+    },
+    "got": {
+      "name": "got",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088948,
+          "name": "got",
+          "dependency": "got",
+          "title": "Got allows a redirect to a UNIX socket",
+          "url": "https://github.com/advisories/GHSA-pfrx-2q88-qq97",
+          "severity": "moderate",
+          "range": "<11.8.5"
+        }
+      ],
+      "effects": [
+        "swarm-js",
+        "web3-bzz"
+      ],
+      "range": "<11.8.5",
+      "nodes": [
+        "node_modules/got",
+        "node_modules/swarm-js/node_modules/got"
+      ],
+      "fixAvailable": true
+    },
+    "highlight.js": {
+      "name": "highlight.js",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1086450,
+          "name": "highlight.js",
+          "dependency": "highlight.js",
+          "title": "ReDOS vulnerabities: multiple grammars",
+          "url": "https://github.com/advisories/GHSA-7wwv-vh3v-89cq",
+          "severity": "moderate",
+          "range": ">=9.0.0 <10.4.1"
+        }
+      ],
+      "effects": [
+        "@truffle/debug-utils"
+      ],
+      "range": "9.0.0 - 10.4.0",
+      "nodes": [
+        "node_modules/highlight.js"
+      ],
+      "fixAvailable": true
+    },
+    "http-cache-semantics": {
+      "name": "http-cache-semantics",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102456,
+          "name": "http-cache-semantics",
+          "dependency": "http-cache-semantics",
+          "title": "http-cache-semantics vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-rc47-6667-2j5j",
+          "severity": "high",
+          "range": "<4.1.1"
+        }
+      ],
+      "effects": [],
+      "range": "<4.1.1",
+      "nodes": [
+        "node_modules/http-cache-semantics",
+        "node_modules/npm/node_modules/http-cache-semantics"
+      ],
+      "fixAvailable": true
+    },
+    "iam-client-lib": {
+      "name": "iam-client-lib",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "@ew-did-registry/jwt",
+        "@gnosis.pm/safe-apps-sdk",
+        "@walletconnect/web3-provider",
+        "axios",
+        "ethers"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/iam-client-lib"
+      ],
+      "fixAvailable": false
+    },
+    "ip": {
+      "name": "ip",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097720,
+          "name": "ip",
+          "dependency": "ip",
+          "title": "NPM IP package incorrectly identifies some private IP addresses as public",
+          "url": "https://github.com/advisories/GHSA-78xj-cgh5-2h22",
+          "severity": "low",
+          "range": "<1.1.9"
+        },
+        {
+          "source": 1101851,
+          "name": "ip",
+          "dependency": "ip",
+          "title": "ip SSRF improper categorization in isPublic",
+          "url": "https://github.com/advisories/GHSA-2p57-rm9w-gvfp",
+          "severity": "high",
+          "range": "<=2.0.1"
+        }
+      ],
+      "effects": [
+        "socks"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/npm/node_modules/ip"
+      ],
+      "fixAvailable": true
+    },
+    "ipfs-core-utils": {
+      "name": "ipfs-core-utils",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "ipfs-utils"
+      ],
+      "effects": [],
+      "range": "0.1.1",
+      "nodes": [
+        "node_modules/ipfs-core-utils"
+      ],
+      "fixAvailable": true
+    },
+    "ipfs-http-client": {
+      "name": "ipfs-http-client",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ipfs-utils",
+        "parse-duration"
+      ],
+      "effects": [
+        "@ew-did-registry/did-ipfs-store"
+      ],
+      "range": "<=0.0.1-e85e5b6e.0 || >=40.0.0",
+      "nodes": [
+        "node_modules/ipfs-http-client"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-ipfs-store",
+        "version": "0.9.0",
+        "isSemVerMajor": true
+      }
+    },
+    "ipfs-utils": {
+      "name": "ipfs-utils",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "nanoid"
+      ],
+      "effects": [
+        "ipfs-core-utils",
+        "ipfs-http-client"
+      ],
+      "range": "1.1.0 - 2.1.0",
+      "nodes": [
+        "node_modules/ipfs-utils"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-ipfs-store",
+        "version": "0.9.0",
+        "isSemVerMajor": true
+      }
+    },
+    "json-schema": {
+      "name": "json-schema",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1101855,
+          "name": "json-schema",
+          "dependency": "json-schema",
+          "title": "json-schema is vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-896r-f27r-55mw",
+          "severity": "critical",
+          "range": "<0.4.0"
+        }
+      ],
+      "effects": [
+        "jsprim"
+      ],
+      "range": "<0.4.0",
+      "nodes": [
+        "node_modules/json-schema",
+        "node_modules/npm/node_modules/json-schema"
+      ],
+      "fixAvailable": true
+    },
+    "json5": {
+      "name": "json5",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096543,
+          "name": "json5",
+          "dependency": "json5",
+          "title": "Prototype Pollution in JSON5 via Parse Method",
+          "url": "https://github.com/advisories/GHSA-9c47-m6qq-7p4h",
+          "severity": "high",
+          "range": "<1.0.2"
+        },
+        {
+          "source": 1096544,
+          "name": "json5",
+          "dependency": "json5",
+          "title": "Prototype Pollution in JSON5 via Parse Method",
+          "url": "https://github.com/advisories/GHSA-9c47-m6qq-7p4h",
+          "severity": "high",
+          "range": ">=2.0.0 <2.2.2"
+        }
+      ],
+      "effects": [],
+      "range": "<1.0.2 || >=2.0.0 <2.2.2",
+      "nodes": [
+        "node_modules/json5",
+        "node_modules/tsconfig-paths/node_modules/json5"
+      ],
+      "fixAvailable": true
+    },
+    "jsonwebtoken": {
+      "name": "jsonwebtoken",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1097690,
+          "name": "jsonwebtoken",
+          "dependency": "jsonwebtoken",
+          "title": "jsonwebtoken unrestricted key type could lead to legacy keys usage ",
+          "url": "https://github.com/advisories/GHSA-8cf7-32gw-wr33",
+          "severity": "high",
+          "range": "<=8.5.1"
+        },
+        {
+          "source": 1102458,
+          "name": "jsonwebtoken",
+          "dependency": "jsonwebtoken",
+          "title": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+          "url": "https://github.com/advisories/GHSA-qwph-4952-7xr6",
+          "severity": "moderate",
+          "range": "<9.0.0"
+        }
+      ],
+      "effects": [
+        "@ew-did-registry/jwt",
+        "passport-jwt"
+      ],
+      "range": "<=8.5.1",
+      "nodes": [
+        "node_modules/jsonwebtoken"
+      ],
+      "fixAvailable": false
+    },
+    "jsprim": {
+      "name": "jsprim",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "json-schema"
+      ],
+      "effects": [],
+      "range": "0.3.0 - 1.4.1 || 2.0.0 - 2.0.1",
+      "nodes": [
+        "node_modules/jsprim",
+        "node_modules/npm/node_modules/jsprim"
+      ],
+      "fixAvailable": true
+    },
+    "levelup": {
+      "name": "levelup",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "semver"
+      ],
+      "effects": [
+        "merkle-patricia-tree"
+      ],
+      "range": "0.9.0 - 1.3.9",
+      "nodes": [
+        "node_modules/levelup"
+      ],
+      "fixAvailable": false
+    },
+    "libnpmdiff": {
+      "name": "libnpmdiff",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "pacote"
+      ],
+      "effects": [
+        "npm"
+      ],
+      "range": "<=2.0.4",
+      "nodes": [
+        "node_modules/npm/node_modules/libnpmdiff"
+      ],
+      "fixAvailable": true
+    },
+    "libnpmexec": {
+      "name": "libnpmexec",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@npmcli/run-script"
+      ],
+      "effects": [
+        "npm"
+      ],
+      "range": "<=2.0.1",
+      "nodes": [
+        "node_modules/npm/node_modules/libnpmexec"
+      ],
+      "fixAvailable": true
+    },
+    "libnpmfund": {
+      "name": "libnpmfund",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@npmcli/arborist"
+      ],
+      "effects": [],
+      "range": "<=1.1.0",
+      "nodes": [
+        "node_modules/npm/node_modules/libnpmfund"
+      ],
+      "fixAvailable": true
+    },
+    "libnpmpack": {
+      "name": "libnpmpack",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@npmcli/run-script",
+        "pacote"
+      ],
+      "effects": [],
+      "range": "<=2.0.1",
+      "nodes": [
+        "node_modules/npm/node_modules/libnpmpack"
+      ],
+      "fixAvailable": true
+    },
+    "libnpmversion": {
+      "name": "libnpmversion",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@npmcli/run-script"
+      ],
+      "effects": [],
+      "range": "<=2.0.0",
+      "nodes": [
+        "node_modules/npm/node_modules/libnpmversion"
+      ],
+      "fixAvailable": true
+    },
+    "marked": {
+      "name": "marked",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1095051,
+          "name": "marked",
+          "dependency": "marked",
+          "title": "Inefficient Regular Expression Complexity in marked",
+          "url": "https://github.com/advisories/GHSA-rrrm-qjm4-v8hf",
+          "severity": "high",
+          "range": "<4.0.10"
+        }
+      ],
+      "effects": [
+        "semantic-release",
+        "typedoc"
+      ],
+      "range": "<4.0.10",
+      "nodes": [
+        "node_modules/marked",
+        "node_modules/typedoc/node_modules/marked"
+      ],
+      "fixAvailable": {
+        "name": "semantic-release",
+        "version": "24.2.3",
+        "isSemVerMajor": true
+      }
+    },
+    "merkle-patricia-tree": {
+      "name": "merkle-patricia-tree",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "levelup"
+      ],
+      "effects": [
+        "ethereumjs-block",
+        "ethereumjs-vm"
+      ],
+      "range": "0.1.22 - 2.3.2",
+      "nodes": [
+        "node_modules/merkle-patricia-tree"
+      ],
+      "fixAvailable": false
+    },
+    "micromatch": {
+      "name": "micromatch",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098681,
+          "name": "micromatch",
+          "dependency": "micromatch",
+          "title": "Regular Expression Denial of Service (ReDoS) in micromatch",
+          "url": "https://github.com/advisories/GHSA-952p-6rrq-rcjv",
+          "severity": "moderate",
+          "range": "<4.0.8"
+        }
+      ],
+      "effects": [],
+      "range": "<4.0.8",
+      "nodes": [
+        "node_modules/micromatch"
+      ],
+      "fixAvailable": true
+    },
+    "minimatch": {
+      "name": "minimatch",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096485,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "minimatch ReDoS vulnerability",
+          "url": "https://github.com/advisories/GHSA-f8q6-p94x-37v3",
+          "severity": "high",
+          "range": "<3.0.5"
+        }
+      ],
+      "effects": [
+        "mocha"
+      ],
+      "range": "<3.0.5",
+      "nodes": [
+        "node_modules/minimatch",
+        "node_modules/npm/node_modules/minimatch"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "minimist": {
+      "name": "minimist",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097678,
+          "name": "minimist",
+          "dependency": "minimist",
+          "title": "Prototype Pollution in minimist",
+          "url": "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+          "severity": "critical",
+          "range": ">=1.0.0 <1.2.6"
+        }
+      ],
+      "effects": [],
+      "range": "1.0.0 - 1.2.5",
+      "nodes": [
+        "node_modules/minimist"
+      ],
+      "fixAvailable": true
+    },
+    "mocha": {
+      "name": "mocha",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "minimatch",
+        "nanoid",
+        "serialize-javascript"
+      ],
+      "effects": [],
+      "range": "5.1.0 - 10.5.2",
+      "nodes": [
+        "node_modules/mocha"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "nanoid": {
+      "name": "nanoid",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1089011,
+          "name": "nanoid",
+          "dependency": "nanoid",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor in nanoid",
+          "url": "https://github.com/advisories/GHSA-qrpm-p2h7-hrv2",
+          "severity": "moderate",
+          "range": ">=3.0.0 <3.1.31"
+        },
+        {
+          "source": 1101163,
+          "name": "nanoid",
+          "dependency": "nanoid",
+          "title": "Predictable results in nanoid generation when given non-integer values",
+          "url": "https://github.com/advisories/GHSA-mwcw-c2x4-8c55",
+          "severity": "moderate",
+          "range": "<3.3.8"
+        }
+      ],
+      "effects": [
+        "ipfs-utils",
+        "mocha"
+      ],
+      "range": "<=3.3.7",
+      "nodes": [
+        "node_modules/ipfs-utils/node_modules/nanoid",
+        "node_modules/mocha/node_modules/nanoid",
+        "node_modules/nanoid"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "node-fetch": {
+      "name": "node-fetch",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1095073,
+          "name": "node-fetch",
+          "dependency": "node-fetch",
+          "title": "node-fetch forwards secure headers to untrusted sites",
+          "url": "https://github.com/advisories/GHSA-r683-j2x4-v87g",
+          "severity": "high",
+          "range": "<2.6.7"
+        }
+      ],
+      "effects": [
+        "cross-fetch",
+        "fetch-ponyfill"
+      ],
+      "range": "<2.6.7",
+      "nodes": [
+        "node_modules/cross-fetch/node_modules/node-fetch",
+        "node_modules/fetch-ponyfill/node_modules/node-fetch",
+        "node_modules/node-fetch"
+      ],
+      "fixAvailable": false
+    },
+    "node-gyp": {
+      "name": "node-gyp",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "request"
+      ],
+      "effects": [
+        "@npmcli/run-script",
+        "npm"
+      ],
+      "range": "<=7.1.2",
+      "nodes": [
+        "node_modules/npm/node_modules/node-gyp"
+      ],
+      "fixAvailable": true
+    },
+    "npm": {
+      "name": "npm",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@npmcli/run-script",
+        {
+          "source": 1088995,
+          "name": "npm",
+          "dependency": "npm",
+          "title": "Packing does not respect root-level ignore files in workspaces",
+          "url": "https://github.com/advisories/GHSA-hj9c-8jmm-8c52",
+          "severity": "high",
+          "range": ">=7.9.0 <8.11.0"
+        },
+        "libnpmdiff",
+        "libnpmexec",
+        "node-gyp",
+        "semver",
+        "tar"
+      ],
+      "effects": [],
+      "range": "<=9.9.3 || 10.0.0-pre.0 - 10.5.0",
+      "nodes": [
+        "node_modules/npm"
+      ],
+      "fixAvailable": true
+    },
+    "pacote": {
+      "name": "pacote",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@npmcli/run-script"
+      ],
+      "effects": [
+        "@npmcli/metavuln-calculator",
+        "libnpmdiff",
+        "libnpmpack"
+      ],
+      "range": "11.1.5 - 11.3.5",
+      "nodes": [
+        "node_modules/npm/node_modules/pacote"
+      ],
+      "fixAvailable": true
+    },
+    "parse-duration": {
+      "name": "parse-duration",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102310,
+          "name": "parse-duration",
+          "dependency": "parse-duration",
+          "title": "parse-duration has a Regex Denial of Service that results in event loop delay and out of memory",
+          "url": "https://github.com/advisories/GHSA-hcrg-fc28-fcg5",
+          "severity": "high",
+          "range": "<2.1.3"
+        }
+      ],
+      "effects": [
+        "ipfs-http-client"
+      ],
+      "range": "<2.1.3",
+      "nodes": [
+        "node_modules/parse-duration"
+      ],
+      "fixAvailable": {
+        "name": "@ew-did-registry/did-ipfs-store",
+        "version": "0.9.0",
+        "isSemVerMajor": true
+      }
+    },
+    "passport": {
+      "name": "passport",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1093639,
+          "name": "passport",
+          "dependency": "passport",
+          "title": "Passport vulnerable to session regeneration when a users logs in or out",
+          "url": "https://github.com/advisories/GHSA-v923-w3x8-wh69",
+          "severity": "moderate",
+          "range": "<0.6.0"
+        }
+      ],
+      "effects": [],
+      "range": "<0.6.0",
+      "nodes": [
+        "node_modules/passport"
+      ],
+      "fixAvailable": {
+        "name": "passport",
+        "version": "0.7.0",
+        "isSemVerMajor": true
+      }
+    },
+    "passport-jwt": {
+      "name": "passport-jwt",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "jsonwebtoken"
+      ],
+      "effects": [],
+      "range": "<=4.0.0",
+      "nodes": [
+        "node_modules/passport-jwt"
+      ],
+      "fixAvailable": true
+    },
+    "path-to-regexp": {
+      "name": "path-to-regexp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1101844,
+          "name": "path-to-regexp",
+          "dependency": "path-to-regexp",
+          "title": "Unpatched `path-to-regexp` ReDoS in 0.1.x",
+          "url": "https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
+          "severity": "high",
+          "range": "<0.1.12"
+        },
+        {
+          "source": 1101850,
+          "name": "path-to-regexp",
+          "dependency": "path-to-regexp",
+          "title": "path-to-regexp outputs backtracking regular expressions",
+          "url": "https://github.com/advisories/GHSA-9wv6-86v2-598j",
+          "severity": "high",
+          "range": "<0.1.10"
+        }
+      ],
+      "effects": [
+        "express"
+      ],
+      "range": "<=0.1.11",
+      "nodes": [
+        "node_modules/path-to-regexp"
+      ],
+      "fixAvailable": true
+    },
+    "qs": {
+      "name": "qs",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096470,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+          "severity": "high",
+          "range": ">=6.5.0 <6.5.3"
+        },
+        {
+          "source": 1096472,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+          "severity": "high",
+          "range": ">=6.7.0 <6.7.3"
+        },
+        {
+          "source": 1096475,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+          "severity": "high",
+          "range": ">=6.10.0 <6.10.3"
+        }
+      ],
+      "effects": [
+        "body-parser",
+        "express"
+      ],
+      "range": "6.5.0 - 6.5.2 || 6.7.0 - 6.7.2 || 6.10.0 - 6.10.2",
+      "nodes": [
+        "node_modules/iam-client-lib/node_modules/qs",
+        "node_modules/npm/node_modules/qs",
+        "node_modules/qs",
+        "node_modules/request/node_modules/qs",
+        "node_modules/superagent/node_modules/qs"
+      ],
+      "fixAvailable": true
+    },
+    "request": {
+      "name": "request",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096727,
+          "name": "request",
+          "dependency": "request",
+          "title": "Server-Side Request Forgery in Request",
+          "url": "https://github.com/advisories/GHSA-p8p7-x288-28g6",
+          "severity": "moderate",
+          "range": "<=2.88.2"
+        },
+        "tough-cookie"
+      ],
+      "effects": [
+        "node-gyp",
+        "servify",
+        "web3-provider-engine"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/npm/node_modules/request",
+        "node_modules/request"
+      ],
+      "fixAvailable": false
+    },
+    "secp256k1": {
+      "name": "secp256k1",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1100205,
+          "name": "secp256k1",
+          "dependency": "secp256k1",
+          "title": "secp256k1-node allows private key extraction over ECDH",
+          "url": "https://github.com/advisories/GHSA-584q-6j8j-r5pm",
+          "severity": "high",
+          "range": ">=4.0.0 <4.0.4"
+        }
+      ],
+      "effects": [],
+      "range": "4.0.0 - 4.0.3",
+      "nodes": [
+        "node_modules/ganache-cli/node_modules/secp256k1",
+        "node_modules/secp256k1"
+      ],
+      "fixAvailable": true
+    },
+    "semantic-release": {
+      "name": "semantic-release",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1088976,
+          "name": "semantic-release",
+          "dependency": "semantic-release",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor in semantic-release",
+          "url": "https://github.com/advisories/GHSA-x2pg-mjhr-2m5x",
+          "severity": "moderate",
+          "range": ">=17.0.4 <19.0.3"
+        },
+        "marked"
+      ],
+      "effects": [],
+      "range": "9.0.0 - 19.0.2",
+      "nodes": [
+        "node_modules/semantic-release"
+      ],
+      "fixAvailable": {
+        "name": "semantic-release",
+        "version": "24.2.3",
+        "isSemVerMajor": true
+      }
+    },
+    "semver": {
+      "name": "semver",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1101088,
+          "name": "semver",
+          "dependency": "semver",
+          "title": "semver vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+          "severity": "high",
+          "range": ">=7.0.0 <7.5.2"
+        },
+        {
+          "source": 1101089,
+          "name": "semver",
+          "dependency": "semver",
+          "title": "semver vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+          "severity": "high",
+          "range": "<5.7.2"
+        },
+        {
+          "source": 1101090,
+          "name": "semver",
+          "dependency": "semver",
+          "title": "semver vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+          "severity": "high",
+          "range": ">=6.0.0 <6.3.1"
+        }
+      ],
+      "effects": [
+        "core-js-compat",
+        "levelup",
+        "npm"
+      ],
+      "range": "<=5.7.1 || 6.0.0 - 6.3.0 || 7.0.0 - 7.5.1",
+      "nodes": [
+        "node_modules/@gnosis.pm/safe-apps-sdk/node_modules/semver",
+        "node_modules/@semantic-release/npm/node_modules/semver",
+        "node_modules/@typescript-eslint/eslint-plugin/node_modules/semver",
+        "node_modules/@typescript-eslint/typescript-estree/node_modules/semver",
+        "node_modules/core-js-compat/node_modules/semver",
+        "node_modules/eslint/node_modules/semver",
+        "node_modules/ganache-cli/node_modules/semver",
+        "node_modules/jest-snapshot/node_modules/semver",
+        "node_modules/jsonwebtoken/node_modules/semver",
+        "node_modules/levelup/node_modules/semver",
+        "node_modules/meow/node_modules/read-pkg/node_modules/semver",
+        "node_modules/meow/node_modules/semver",
+        "node_modules/normalize-package-data/node_modules/semver",
+        "node_modules/npm/node_modules/semver",
+        "node_modules/semantic-release/node_modules/semver",
+        "node_modules/semver",
+        "node_modules/solc/node_modules/semver",
+        "node_modules/superagent/node_modules/semver"
+      ],
+      "fixAvailable": false
+    },
+    "semver-regex": {
+      "name": "semver-regex",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1092605,
+          "name": "semver-regex",
+          "dependency": "semver-regex",
+          "title": "Regular expression denial of service in semver-regex",
+          "url": "https://github.com/advisories/GHSA-4x5v-gmq8-25ch",
+          "severity": "low",
+          "range": "<3.1.4"
+        }
+      ],
+      "effects": [],
+      "range": "<3.1.4",
+      "nodes": [
+        "node_modules/semver-regex"
+      ],
+      "fixAvailable": true
+    },
+    "send": {
+      "name": "send",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1100526,
+          "name": "send",
+          "dependency": "send",
+          "title": "send vulnerable to template injection that can lead to XSS",
+          "url": "https://github.com/advisories/GHSA-m6fv-jmcg-4jfg",
+          "severity": "low",
+          "range": "<0.19.0"
+        }
+      ],
+      "effects": [
+        "express",
+        "serve-static"
+      ],
+      "range": "<0.19.0",
+      "nodes": [
+        "node_modules/send"
+      ],
+      "fixAvailable": true
+    },
+    "serialize-javascript": {
+      "name": "serialize-javascript",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102339,
+          "name": "serialize-javascript",
+          "dependency": "serialize-javascript",
+          "title": "Cross-site Scripting (XSS) in serialize-javascript",
+          "url": "https://github.com/advisories/GHSA-76p7-773f-r4q5",
+          "severity": "moderate",
+          "range": "<6.0.2"
+        }
+      ],
+      "effects": [
+        "mocha"
+      ],
+      "range": "<6.0.2",
+      "nodes": [
+        "node_modules/serialize-javascript"
+      ],
+      "fixAvailable": {
+        "name": "mocha",
+        "version": "11.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "serve-static": {
+      "name": "serve-static",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1100528,
+          "name": "serve-static",
+          "dependency": "serve-static",
+          "title": "serve-static vulnerable to template injection that can lead to XSS",
+          "url": "https://github.com/advisories/GHSA-cm22-4g7w-348p",
+          "severity": "low",
+          "range": "<1.16.0"
+        },
+        "send"
+      ],
+      "effects": [
+        "express"
+      ],
+      "range": "<=1.16.0",
+      "nodes": [
+        "node_modules/serve-static"
+      ],
+      "fixAvailable": true
+    },
+    "servify": {
+      "name": "servify",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "request"
+      ],
+      "effects": [
+        "eth-lib"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/servify"
+      ],
+      "fixAvailable": true
+    },
+    "simple-get": {
+      "name": "simple-get",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1090444,
+          "name": "simple-get",
+          "dependency": "simple-get",
+          "title": "Exposure of Sensitive Information in simple-get",
+          "url": "https://github.com/advisories/GHSA-wpg7-2c88-r8xv",
+          "severity": "high",
+          "range": "<2.8.2"
+        }
+      ],
+      "effects": [],
+      "range": "<2.8.2",
+      "nodes": [
+        "node_modules/simple-get"
+      ],
+      "fixAvailable": true
+    },
+    "socks": {
+      "name": "socks",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ip"
+      ],
+      "effects": [],
+      "range": "1.0.0 - 2.7.1",
+      "nodes": [
+        "node_modules/npm/node_modules/socks"
+      ],
+      "fixAvailable": true
+    },
+    "solc": {
+      "name": "solc",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "yargs"
+      ],
+      "effects": [
+        "@ensdomains/ens"
+      ],
+      "range": "0.3.6 - 0.4.26",
+      "nodes": [
+        "node_modules/solc"
+      ],
+      "fixAvailable": true
+    },
+    "swarm-js": {
+      "name": "swarm-js",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "eth-lib",
+        "got",
+        "tar"
+      ],
+      "effects": [],
+      "range": "0.1.1 - 0.1.17 || >=0.1.35",
+      "nodes": [
+        "node_modules/swarm-js"
+      ],
+      "fixAvailable": true
+    },
+    "tar": {
+      "name": "tar",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097493,
+          "name": "tar",
+          "dependency": "tar",
+          "title": "Denial of service while parsing a tar file due to lack of folders count validation",
+          "url": "https://github.com/advisories/GHSA-f5x3-32g6-xq36",
+          "severity": "moderate",
+          "range": "<6.2.1"
+        }
+      ],
+      "effects": [
+        "npm",
+        "swarm-js"
+      ],
+      "range": "<6.2.1",
+      "nodes": [
+        "node_modules/npm/node_modules/tar",
+        "node_modules/tar"
+      ],
+      "fixAvailable": true
+    },
+    "tough-cookie": {
+      "name": "tough-cookie",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097682,
+          "name": "tough-cookie",
+          "dependency": "tough-cookie",
+          "title": "tough-cookie Prototype Pollution vulnerability",
+          "url": "https://github.com/advisories/GHSA-72xf-g2v4-qvf3",
+          "severity": "moderate",
+          "range": "<4.1.3"
+        }
+      ],
+      "effects": [
+        "request"
+      ],
+      "range": "<4.1.3",
+      "nodes": [
+        "node_modules/jsdom/node_modules/tough-cookie",
+        "node_modules/npm/node_modules/request/node_modules/tough-cookie",
+        "node_modules/tough-cookie"
+      ],
+      "fixAvailable": false
+    },
+    "typedoc": {
+      "name": "typedoc",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "marked"
+      ],
+      "effects": [],
+      "range": "<=0.21.9 || 0.22.0-beta.0 - 0.22.10 || >=1.0.0-dev.1",
+      "nodes": [
+        "node_modules/typedoc"
+      ],
+      "fixAvailable": true
+    },
+    "underscore": {
+      "name": "underscore",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1095097,
+          "name": "underscore",
+          "dependency": "underscore",
+          "title": "Arbitrary Code Execution in underscore",
+          "url": "https://github.com/advisories/GHSA-cf4h-3jhx-xvhq",
+          "severity": "critical",
+          "range": ">=1.3.2 <1.12.1"
+        }
+      ],
+      "effects": [
+        "web3-utils"
+      ],
+      "range": "1.3.2 - 1.12.0",
+      "nodes": [
+        "node_modules/underscore"
+      ],
+      "fixAvailable": true
+    },
+    "web3": {
+      "name": "web3",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1085584,
+          "name": "web3",
+          "dependency": "web3",
+          "title": "Insecure Credential Storage in web3",
+          "url": "https://github.com/advisories/GHSA-27v7-qhfv-rqq8",
+          "severity": "low",
+          "range": "<=1.5.2"
+        },
+        "web3-bzz",
+        "web3-net",
+        "web3-shh"
+      ],
+      "effects": [
+        "@truffle/interface-adapter"
+      ],
+      "range": "<=3.0.0-rc.5",
+      "nodes": [
+        "node_modules/web3"
+      ],
+      "fixAvailable": true
+    },
+    "web3-bzz": {
+      "name": "web3-bzz",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "got"
+      ],
+      "effects": [
+        "web3"
+      ],
+      "range": "<=1.7.4",
+      "nodes": [
+        "node_modules/web3-bzz"
+      ],
+      "fixAvailable": true
+    },
+    "web3-core": {
+      "name": "web3-core",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core-method"
+      ],
+      "effects": [
+        "@gnosis.pm/safe-apps-sdk",
+        "web3-eth",
+        "web3-eth-accounts",
+        "web3-eth-contract",
+        "web3-eth-personal",
+        "web3-net",
+        "web3-shh"
+      ],
+      "range": "1.2.9-rc.0 - 3.0.0-rc.5",
+      "nodes": [
+        "node_modules/web3-core"
+      ],
+      "fixAvailable": false
+    },
+    "web3-core-method": {
+      "name": "web3-core-method",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "@ethersproject/transactions"
+      ],
+      "effects": [
+        "web3-core",
+        "web3-eth",
+        "web3-eth-accounts",
+        "web3-eth-contract",
+        "web3-eth-personal",
+        "web3-net",
+        "web3-shh"
+      ],
+      "range": ">=1.2.9-rc.0",
+      "nodes": [
+        "node_modules/web3-core-method"
+      ],
+      "fixAvailable": false
+    },
+    "web3-eth": {
+      "name": "web3-eth",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core",
+        "web3-core-method"
+      ],
+      "effects": [],
+      "range": "<=1.0.0 || 1.2.9-rc.0 - 3.0.0-rc.5",
+      "nodes": [
+        "node_modules/web3-eth"
+      ],
+      "fixAvailable": true
+    },
+    "web3-eth-accounts": {
+      "name": "web3-eth-accounts",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core",
+        "web3-core-method"
+      ],
+      "effects": [],
+      "range": "<=1.0.0 || 1.2.9-rc.0 - 3.0.0-rc.5",
+      "nodes": [
+        "node_modules/web3-eth-accounts"
+      ],
+      "fixAvailable": true
+    },
+    "web3-eth-contract": {
+      "name": "web3-eth-contract",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core",
+        "web3-core-method"
+      ],
+      "effects": [
+        "web3-eth-ens"
+      ],
+      "range": "<=1.0.0 || 1.2.9-rc.0 - 3.0.0-rc.5",
+      "nodes": [
+        "node_modules/web3-eth-contract"
+      ],
+      "fixAvailable": true
+    },
+    "web3-eth-ens": {
+      "name": "web3-eth-ens",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-eth-contract"
+      ],
+      "effects": [],
+      "range": "1.2.9-rc.0 - 3.0.0-rc.5",
+      "nodes": [
+        "node_modules/web3-eth-ens"
+      ],
+      "fixAvailable": true
+    },
+    "web3-eth-personal": {
+      "name": "web3-eth-personal",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core",
+        "web3-core-method"
+      ],
+      "effects": [],
+      "range": "<=1.0.0 || 1.2.9-rc.0 - 3.0.0-rc.5 || 4.0.9-dev.408125.0",
+      "nodes": [
+        "node_modules/web3-eth-personal"
+      ],
+      "fixAvailable": true
+    },
+    "web3-net": {
+      "name": "web3-net",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core",
+        "web3-core-method"
+      ],
+      "effects": [
+        "web3"
+      ],
+      "range": "1.2.9-rc.0 - 3.0.0-rc.5 || 4.0.8-dev.408125.0",
+      "nodes": [
+        "node_modules/web3-net"
+      ],
+      "fixAvailable": true
+    },
+    "web3-provider-engine": {
+      "name": "web3-provider-engine",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "eth-json-rpc-infura",
+        "eth-json-rpc-middleware",
+        "ethereumjs-vm",
+        "request"
+      ],
+      "effects": [
+        "@walletconnect/web3-provider"
+      ],
+      "range": "<=16.0.8",
+      "nodes": [
+        "node_modules/web3-provider-engine"
+      ],
+      "fixAvailable": false
+    },
+    "web3-shh": {
+      "name": "web3-shh",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "web3-core",
+        "web3-core-method"
+      ],
+      "effects": [
+        "web3"
+      ],
+      "range": "<=1.0.0 || 1.2.9-rc.0 - 1.10.4",
+      "nodes": [
+        "node_modules/web3-shh"
+      ],
+      "fixAvailable": true
+    },
+    "web3-utils": {
+      "name": "web3-utils",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "underscore"
+      ],
+      "effects": [
+        "@truffle/codec"
+      ],
+      "range": "1.0.0-beta.8 - 1.3.5 || 2.0.0-alpha - 3.0.0-rc.4",
+      "nodes": [
+        "node_modules/web3-utils"
+      ],
+      "fixAvailable": true
+    },
+    "word-wrap": {
+      "name": "word-wrap",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102444,
+          "name": "word-wrap",
+          "dependency": "word-wrap",
+          "title": "word-wrap vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-j8xg-fqg3-53r7",
+          "severity": "moderate",
+          "range": "<1.2.4"
+        }
+      ],
+      "effects": [],
+      "range": "<1.2.4",
+      "nodes": [
+        "node_modules/word-wrap"
+      ],
+      "fixAvailable": true
+    },
+    "ws": {
+      "name": "ws",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098393,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws affected by a DoS when handling a request with many HTTP headers",
+          "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+          "severity": "high",
+          "range": ">=7.0.0 <7.5.10"
+        },
+        {
+          "source": 1098395,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws affected by a DoS when handling a request with many HTTP headers",
+          "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+          "severity": "high",
+          "range": ">=2.1.0 <5.2.4"
+        }
+      ],
+      "effects": [
+        "@ethersproject/providers",
+        "@walletconnect/socket-transport",
+        "eth-lib"
+      ],
+      "range": "2.1.0 - 5.2.3 || 7.0.0 - 7.5.9",
+      "nodes": [
+        "node_modules/@energyweb/iam-contracts/node_modules/ws",
+        "node_modules/@ethersproject/providers/node_modules/ws",
+        "node_modules/@walletconnect/socket-transport/node_modules/ws",
+        "node_modules/jsdom/node_modules/ws",
+        "node_modules/web3-provider-engine/node_modules/ws",
+        "node_modules/ws"
+      ],
+      "fixAvailable": false
+    },
+    "y18n": {
+      "name": "y18n",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1095086,
+          "name": "y18n",
+          "dependency": "y18n",
+          "title": "Prototype Pollution in y18n",
+          "url": "https://github.com/advisories/GHSA-c4w7-xm78-47vh",
+          "severity": "high",
+          "range": "=4.0.0"
+        }
+      ],
+      "effects": [],
+      "range": "4.0.0",
+      "nodes": [
+        "node_modules/ganache-cli/node_modules/y18n"
+      ],
+      "fixAvailable": true
+    },
+    "yargs": {
+      "name": "yargs",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "yargs-parser"
+      ],
+      "effects": [
+        "solc"
+      ],
+      "range": "4.0.0-alpha1 - 7.0.0-alpha.3 || 7.1.1",
+      "nodes": [
+        "node_modules/yargs"
+      ],
+      "fixAvailable": true
+    },
+    "yargs-parser": {
+      "name": "yargs-parser",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088783,
+          "name": "yargs-parser",
+          "dependency": "yargs-parser",
+          "title": "yargs-parser Vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-p9pc-299p-vxgp",
+          "severity": "moderate",
+          "range": "<=5.0.0"
+        }
+      ],
+      "effects": [
+        "yargs"
+      ],
+      "range": "<=5.0.0",
+      "nodes": [
+        "node_modules/yargs-parser"
+      ],
+      "fixAvailable": true
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 5,
+      "moderate": 40,
+      "high": 56,
+      "critical": 36,
+      "total": 137
+    },
+    "dependencies": {
+      "prod": 765,
+      "dev": 1511,
+      "optional": 6,
+      "peer": 1,
+      "peerOptional": 0,
+      "total": 2275
+    }
+  }
+}
